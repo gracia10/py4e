@@ -1,3 +1,15 @@
+# 입력값 유효성 확인
+try:
+    n = int(input("첫 번째 수 입력 : "))
+    m = int(input("두 번째 수 입력 : "))
+
+    if n < 1 or m < 1 or n > m:
+        raise Exception()
+except:
+    print("입력 정보가 옳지 않습니다")
+    quit()
+
+# 범위 내 소수 갯수 확인
 def count_prime_number(n, m):
     count = 0
 
@@ -17,16 +29,4 @@ def count_prime_number(n, m):
     print(f"소수개수 {count}")
 
 
-# 입력값 유효성 확인
-try:
-    n = int(input("첫 번째 수 입력 : "))
-    m = int(input("두 번째 수 입력 : "))
-
-    if n < 1 or m < 1 or n > m:
-        raise Exception()
-except:
-    print("입력 정보가 옳지 않습니다")
-    quit()
-
-# 함수 수행
 count_prime_number(n, m)

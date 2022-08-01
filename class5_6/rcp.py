@@ -1,6 +1,16 @@
 import random
 
+# 입력값 유효성 확인
+try:
+    games = int(input("몇 판을 진행하시겠습니까? : "))
 
+    if games < 1:
+        raise Exception()
+except:
+    print("1 이상의 숫자만 입력해 주세요")
+    quit()
+
+# 가위바위보 입력값 유효성 확인
 def checkValue(val):
     if val == "가위" or val == "0":
         result = 0
@@ -14,14 +24,14 @@ def checkValue(val):
     return result
 
 
+# 전적조회 가위바위보
 def rsp_advanced(games):
     inputs = {0: "가위", 1: "바위", 2: "보"}
-    results = ["비김", "컴퓨터의 승리!", "나의 승리!"]
+    messages = ["비김", "컴퓨터의 승리!", "나의 승리!"]
+    results = [0, 0, 0]
     current_game = 1
 
-    while True:
-        if current_game > games:
-            break
+    while current_game <= games:
 
         cp = random.randint(0, 2)
 
@@ -32,19 +42,13 @@ def rsp_advanced(games):
 
         print("나: ", inputs[my])
         print("컴퓨터 : ", inputs[cp])
-        print(f"----- {games} 번째 판 {results[cp-my]} -----")
+        print(f"{current_game} 번째 판 {messages[cp-my]}\n")
+
+        results[cp - my] += 1
         current_game += 1
 
+    print(f"나의 전적: {results[2]}승 {results[0]}무 {results[1]}패")
+    print(f"컴퓨터의 전적: {results[1]}승 {results[0]}무 {results[2]}패")
 
-# 입력값 유효성 확인
-try:
-    games = int(input("몇 판을 진행하시겠습니까? : "))
 
-    if games < 1:
-        raise Exception()
-except:
-    print("1 이상의 숫자만 입력해 주세요")
-    quit()
-
-# 함수 수행
 rsp_advanced(games)
