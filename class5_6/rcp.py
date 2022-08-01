@@ -36,6 +36,7 @@ def rsp_advanced(games):
         current_game += 1
 
 
+# 입력값 유효성 확인
 try:
     games = int(input("몇 판을 진행하시겠습니까? : "))
 
@@ -45,4 +46,5 @@ except:
     print("1 이상의 숫자만 입력해 주세요")
     quit()
 
+# 함수 수행
 rsp_advanced(games)
