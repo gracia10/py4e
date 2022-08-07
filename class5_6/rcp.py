@@ -6,7 +6,7 @@ try:
 
     if games < 1:
         raise Exception()
-except:
+except Exception:
     print("1 이상의 숫자만 입력해 주세요")
     quit()
 

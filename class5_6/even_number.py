@@ -5,7 +5,7 @@ try:
 
     if n < 1 or m < 1 or n > m:
         raise Exception()
-except:
+except Exception:
     print("입력 정보가 옳지 않습니다")
     quit()
 

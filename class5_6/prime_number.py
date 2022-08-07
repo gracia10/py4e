@@ -5,7 +5,7 @@ try:
 
     if n < 1 or m < 1 or n > m:
         raise Exception()
-except:
+except Exception:
     print("입력 정보가 옳지 않습니다")
     quit()
 
@@ -18,13 +18,13 @@ def count_prime_number(n, m):
         if number == 1:
             continue
 
-        flag = 1
+        is_prime = 1
         for i in range(2, number):
             if number % i == 0:
-                flag = 0
+                is_prime = 0
                 break
 
-        count += flag
+        count += is_prime
 
     print(f"소수개수 {count}")
 
