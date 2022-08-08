@@ -6,7 +6,8 @@ origin_text = """안녕하세요.
 def count_word(text, serach):
     counter = 0
     for word in text.split():
-        if word.find(serach) > 0:
+        print(word)
+        if word.find(serach) >= 0:
             counter += 1
 
     print(counter)
@@ -19,4 +20,4 @@ def save(text):
         fhand.write(text)
 
 
-count_word(origin_text, "습니다")
+count_word(origin_text, "파이썬")

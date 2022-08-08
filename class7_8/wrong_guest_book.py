@@ -2,9 +2,9 @@ origin_guest_book = """김갑,123456789
 이을,010-1234-5678
 박병,010-5678-111
 최정,111-1111-1111
-정무,010-3333-3333"""
+정무,010-333-33333"""
 
-
+# 전화부 저장 및 잘못된 번호 조회
 def wrong_guest_book(guest_book):
 
     save(guest_book)
@@ -17,7 +17,8 @@ def wrong_guest_book(guest_book):
         if (
             phone.startswith("010")
             and len(phone) == 13
-            and len((phone).split("-")) == 3
+            and len(phone.split("-")) == 3
+            and len(phone.split("-")[1]) == 4
         ):
             continue
 
