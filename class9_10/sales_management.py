@@ -17,13 +17,7 @@ def sales_management(names, records):
     results = {}
 
     for i, name in enumerate(names):
-
-        record = 0
-
-        for month_record in records[i]:
-            record += month_record
-
-        results[name] = int(record / 12)
+        results[name] = int(sum(records[i]) / 12)
 
     # 평균 값 기준 역정렬 배열
     sorted_results = sorted(results.items(), key=lambda x: x[1], reverse=True)
