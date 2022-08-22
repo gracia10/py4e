@@ -1,9 +1,11 @@
 # 종목/수량/평단 , 판매가
-stocks = "삼성전자/10/85000,카카오/15/130000,LG화학/3/820000,NAVER/5/420000"
-sells = [82000, 160000, 835000, 410000]
+STOCK_STRING = "삼성전자/10/85000,카카오/15/130000,LG화학/3/820000,NAVER/5/420000"
+SELLS = [82000, 160000, 835000, 410000]
 
 
 def stock_profit(stocks, sells):
+    """종목별 수익률 상위순으로 출력하는 함수"""
+
     results = []
     stock_list = stocks.split(",")
 
@@ -21,4 +23,4 @@ def stock_profit(stocks, sells):
         print(f"{name}의 수익률 {performance:.3}")
 
 
-stock_profit(stocks, sells)
+stock_profit(STOCK_STRING, SELLS)
