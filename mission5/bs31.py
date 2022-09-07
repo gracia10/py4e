@@ -2,6 +2,8 @@ import random
 
 
 def bs31():
+    """31을 외치면 당첨이 되는 함수 (턴당 최대 3회 제시가능)"""
+
     print("베스킨라빈스 써리원 게임")
     finish_num = 31
     current_num = 0
@@ -12,7 +14,7 @@ def bs31():
         current_num = get_my_number(current_num)
         print(f"현재 숫자: {current_num}")
 
-        # 사용자 숫자가 10이 넘은 경우 종료
+        # 사용자 숫자가 종료 숫자를 넘은 경우 종료
         if current_num >= finish_num:
             print("사용자 당첨")
             quit()
@@ -20,7 +22,7 @@ def bs31():
         # 컴퓨터 숫자 입력
         computer_nums = [current_num + i + 1 for i in range(0, random.randint(1, 3))]
 
-        # 컴퓨터 숫자가 10이 넘은 경우 종료
+        # 컴퓨터 숫자가 종료 숫자를 넘은 경우 종료
         for computer_num in computer_nums:
             current_num = computer_num
             print(f"컴퓨터 : {current_num}")
@@ -33,8 +35,8 @@ def bs31():
         print(f"현재 숫자: {current_num}")
 
 
-# 사용자 입력값 중 마지막값 리턴
 def get_my_number(current_num):
+    """사용자 입력값 중 마지막값 리턴"""
 
     # 입력값이 1~3개가 아니거나, 현재값보다 1 크지 않으면 다시 값을 받음
     while True:
